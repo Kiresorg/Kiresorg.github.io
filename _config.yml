@@ -4,24 +4,24 @@ url: "https://www.erikdavidtech.com"
 # Internal nav
 nav:
   main:
-    writing: "/writing"
-    speaking: "/speaking"
-    projects: "/projects"
-    photos: "https://www.flickr.com/photos/brikis98/albums/"
-  writing:
-    all: "/writing"
-    popular: "/writing/popular"
-    tags: "/writing/tags"
-    rss: "/feed.xml"
+    # writing: "/writing"
+    # speaking: "/speaking"
+    # projects: "/projects"
+    # photos: "https://www.flickr.com/photos/brikis98/albums/"
+  # writing:
+  #   all: "/writing"
+  #   popular: "/writing/popular"
+  #   tags: "/writing/tags"
+  #   rss: "/feed.xml"
 
 # Bio settings
 name: "Erik Gross"
-description: "The home page of Erik Gross, co-founder of The Tech Academy, author of &quot;You Are Not Stupid: Computers and Tech Simplified&quot; and &quot;Learn To Code in Hours with JavaScript&quot;, and software engineer at IBM, Providence and Travelliance."
+description: "The home page of Erik Gross, co-founder of The Tech Academy, author of &quot;You Are Not Stupid: Computers and Technology Simplified&quot; and &quot;Learn To Code in Hours with JavaScript&quot;, and software engineer at IBM, Providence and Travelliance."
 thumbnail_path: "profile-photos/ErikHeadshot.jpg"
 website_repo_url: "https://github.com/kiresorg/kiresorg.github.io"
 techacademy_url: "https://www.learncodinganywhere.com"
-terraform_up_and_running_url: "https://www.terraformupandrunning.com/"
-terraform_up_and_running_code_url: "https://github.com/brikis98/terraform-up-and-running-code"
+youarenotstupid_url: "http://mybook.to/youarenotstupid"
+nnps_url: "https://en.wikipedia.org/wiki/Nuclear_Power_School"
 
 # URLs
 contact_urls:
