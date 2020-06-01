@@ -17,11 +17,9 @@ nav:
 # Bio settings
 name: "Erik Gross"
 description: "The home page of Erik Gross, co-founder of The Tech Academy, author of &quot;You Are Not Stupid: Computers and Tech Simplified&quot; and &quot;Learn To Code in Hours with JavaScript&quot;, and software engineer at IBM, Providence and Travelliance."
-thumbnail_path: "profile-photos/yevgeniy-brikman-medium.jpg"
-hello_startup_url: "https://www.hello-startup.net/"
+thumbnail_path: "profile-photos/ErikHeadshot.jpg"
 website_repo_url: "https://github.com/kiresorg/kiresorg.github.io"
-atomic_squirrel_url: "https://www.atomic-squirrel.net/"
-gruntwork_url: "https://www.gruntwork.io/"
+techacademy_url: "https://www.learncodinganywhere.com"
 terraform_up_and_running_url: "https://www.terraformupandrunning.com/"
 terraform_up_and_running_code_url: "https://github.com/brikis98/terraform-up-and-running-code"
 
