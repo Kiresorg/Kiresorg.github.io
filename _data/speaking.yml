@@ -1,0 +1,10 @@
+- name: "The Tech Academy Podcast: Interview with Erik Gross"
+  date: "November 29, 2017"
+  description: |
+    Normally I'm the host of The Tech Academy Podcast. Here, we switched it up and I was the guest. We talk about the launch of
+    three new books that Jack Stanley and I wrote - and there's a bit of personal  and company history in there as well.
+  embed_url: "//www.youtube.com/embed/kx06Wz9X0UE/?start=0"
+  wrapper_style: "padding-bottom: 35%"
+  links:
+    - label: "Podcast"
+      url: "https://www.youtube.com/watch?v=kx06Wz9X0UE"

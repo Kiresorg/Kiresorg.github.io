@@ -1,0 +1,31 @@
+- name: "The Tech Academy"
+  date: "2014"
+  description: |
+    I'm the co-founder of The Tech Academy, a technology training company headquartered in Portland, Oregon. We deliver
+    coding bootcamps - immersive, intensive training that turns you into a well-rounded entry-level technology professional.
+    A pioneer in the coding bootcamp space, we are recognized around the world as one of the best providers of both on-campus and 
+    on-line developer education. Our innovative training philosophy and methods make it possible for any bright person
+    to break into the technology industry. We also deliver advanced training to clients such as the U.S. Air Force, CarMax and many others.
+  url: "https://www.learncodinganywhere.com"
+  image: "tta-logo.png"
+- name: "You Are Not Stupid: Computers and Technology Simplified"
+  date: "2020"
+  description: |
+    My co-founder, Jack Stanley, and I wrote this book because we have the purpose to bridge the gap between people and technology.
+    In today's world, we all use technology on a daily basis. Yet all too often, we do so with little understanding of how it works.
+    The barriers to understanding the world of computers and tech are very real: how do these tiny devices work? What is a computer,
+    actually? How can I learn the subject when it's riddled with complex technical jargon that no one seems to explain in a clear,
+    simple way? We wanted to break down the subject so that anyone could understand it. Since we couldn't find any resource out there
+    that did this well, we made it. If you have a friend or loved one who "just doesn't get computers," give them this book. It will
+    change their life.
+  url: "http://mybook.to/youarenotstupid"
+  image: "stupid.png"
+- name: "The Project Management Handbook: Simplified Agile, Scrum and DevOps for Beginners"
+  date: "2019"
+  description: |
+    No matter your role in a technology company, an understanding of the basics of project management is vital to success.
+    But a newcomer to the area can rapidly get lost in specialized terminology and conflicting data. This book simplifies the subject so you can
+    understand and operate with it, no matter how it is implemented in your company. It covers: Agile, Scrum, DevOps and how
+    software is made.
+  url: "mybook.to/projectmgmthandbook"
+  image: "stupid.png"

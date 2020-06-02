@@ -1,0 +1,11 @@
+---
+layout: default
+title: "Erik Gross: Creations"
+header_title: Creations
+include_header: creations_header.html
+nav_item: creations
+---
+
+{% for creation in site.data.creations %}
+  {% include creation-outline.html creation=creation %}
+{% endfor %}

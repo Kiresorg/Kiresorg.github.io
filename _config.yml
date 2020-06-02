@@ -4,9 +4,10 @@ url: "https://www.erikdavidtech.com"
 # Internal nav
 nav:
   main:
-    # writing: "/writing"
-    # speaking: "/speaking"
+    # technology: "/technology"
+    speaking: "/speaking"
     # projects: "/projects"
+    creations: "/creations"
     # photos: "https://www.flickr.com/photos/brikis98/albums/"
   # writing:
   #   all: "/writing"
@@ -22,6 +23,7 @@ website_repo_url: "https://github.com/kiresorg/kiresorg.github.io"
 techacademy_url: "https://www.learncodinganywhere.com"
 youarenotstupid_url: "http://mybook.to/youarenotstupid"
 nnps_url: "https://en.wikipedia.org/wiki/Nuclear_Power_School"
+erik_email: "mailto:erik.d.gross@gmail.com"
 
 # URLs
 contact_urls:
@@ -60,7 +62,7 @@ timezone: 'America/Los_Angeles'
 repository: kiresorg/kiresorg.github.io
 
 # Plugins (GitHub Pages only support a few)
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-paginate
