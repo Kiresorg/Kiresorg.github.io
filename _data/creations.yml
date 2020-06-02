@@ -27,5 +27,5 @@
     But a newcomer to the area can rapidly get lost in specialized terminology and conflicting data. This book simplifies the subject so you can
     understand and operate with it, no matter how it is implemented in your company. It covers: Agile, Scrum, DevOps and how
     software is made.
-  url: "mybook.to/projectmgmthandbook"
-  image: "stupid.png"
+  url: "http://mybook.to/projectmgmthandbook"
+  image: "projectmgmthandbook.jpg"
