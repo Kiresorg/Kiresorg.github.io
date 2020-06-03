@@ -1,0 +1,11 @@
+---
+layout: default
+title: "Erik Gross: Writer"
+header_title: Writer
+include_header: writer_header.html
+nav_item: writer
+---
+
+{% for book in site.data.books %}
+  {% include writer-outline.html book=book %}
+{% endfor %}

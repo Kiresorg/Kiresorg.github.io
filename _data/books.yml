@@ -1,11 +1,11 @@
 - name: "The Tech Academy"
   date: "2014"
   description: |
-    I'm the co-founder of The Tech Academy, a technology training company headquartered in Portland, Oregon. We deliver
-    coding bootcamps - immersive, intensive training that turns you into a well-rounded entry-level technology professional.
-    A pioneer in the coding bootcamp space, we are recognized around the world as one of the best providers of both on-campus and 
-    on-line developer education. Our innovative training philosophy and methods make it possible for any bright person
-    to break into the technology industry. We also deliver advanced training to clients such as the U.S. Air Force, CarMax and many others.
+    I co-founded The Tech Academy, a very successful technology training company. The primary offerings 
+    there are coding boot camps. I have been the senior technologist there since its inception, and 
+    helped create every element of its curriculum. This comprises four six camp programs, each of which 
+    has between 600-1200 hours of training. I've also created many advanced technology courses that 
+    are used to train their instructors and in-house developers.
   url: "https://www.learncodinganywhere.com"
   image: "tta-logo.png"
 - name: "You Are Not Stupid: Computers and Technology Simplified"

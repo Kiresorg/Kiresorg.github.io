@@ -5,9 +5,9 @@ url: "https://www.erikdavidtech.com"
 nav:
   main:
     # technology: "/technology"
-    speaking: "/speaking"
+    speaker: "/speaker"
     # projects: "/projects"
-    creations: "/creations"
+    writer: "/writer"
     # photos: "https://www.flickr.com/photos/brikis98/albums/"
   # writing:
   #   all: "/writing"

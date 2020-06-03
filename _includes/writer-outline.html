@@ -1,0 +1,14 @@
+{% capture book_title_element %}{% if include.book_title_element %}{{ include.book_title_element }}{% else %}h2{% endif %}{% endcapture %}
+<div class="mxn2 clearfix mb2 py3{% unless include.exclude_divider %} border-bottom border-light-gray circle-line {% endunless %}">
+  <div class="col sm-col-4 px2 mb2">
+    <a href="{{ include.book.url }}" target="_blank">
+      {% capture image_path %}books/{{ include.book.image }}{% endcapture %}
+      {% include image.html path=image_path alt=include.book.name %}
+    </a>
+  </div>
+  <div class="col sm-col-8 px2">
+    <a href="{{ include.book.url }}" target="_blank" name="{{ include.book.name | downcase | replace:' ','-' | remove:',' }}"><{{ book_title_element }} class="mt0 mb0">{{ include.book.name }}</{{ book_title_element }}></a>
+    <a href="{{ include.book.url }}" target="_blank" class="block h6 mb2">{{ include.book.url }}</a>
+    <p class="left-align">{{ include.book.description }}</p>
+  </div>
+</div>
