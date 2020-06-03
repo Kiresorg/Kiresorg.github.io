@@ -1,3 +1,14 @@
+- name: "Programming Basics"
+  date: "Jul 1, 2018"
+  description: |
+    As part of our curriculum at <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>, 
+    I recorded a video that goes over the basic elements of programming and what it's like to have 
+    a career in the industry.
+  embed_url: "//ttamediaservices-uswe.streaming.media.azure.net/90d4dcc6-0bdf-4785-826f-20ccd6a46e60/computer_programming.mp4"
+  wrapper_style: "padding-bottom: 35%"
+  links:
+    - label: "Video & Slides"
+      url: "https://ttamediaservices-uswe.streaming.media.azure.net/90d4dcc6-0bdf-4785-826f-20ccd6a46e60/computer_programming.mp4"
 - name: "The Tech Academy Podcast: Interview with Erik Gross"
   date: "November 29, 2017"
   description: |
