@@ -4,7 +4,7 @@ title:  "A Computer Science Journey"
 date:   2021-09-23 13:17:11 -0700
 categories: jekyll update
 ---
-For some years now, I've had a "back burner" project to fill in some holes in my knowledge of the fundamentals of Computer Science (CS). Much of my education in computers and programming nas been self-taught, although the education I got from the Navy in digital computer operation and electronics was excellent and has served me in good stead.
+For some years now, I've had a "back burner" project to fill in some holes in my knowledge of the fundamentals of Computer Science (CS). Much of my education in computers and programming has been self-taught, although the education I got from the Navy in digital computer operation and electronics was excellent and has served me in good stead.
 
 In fact, part of the reason it's taken me so long to start on this project is that from a certain point of view, it didn't matter. I've had a pretty successful career in technology. My employers and clients have (for the most part) been really happy with my performance, and my team members have been happy with my skills and my collaborative work. I co-founded a really awesome code school ([The Tech Academy](https://www.learncodinganywhere.com/)). I have co-written seven technology books.
 
