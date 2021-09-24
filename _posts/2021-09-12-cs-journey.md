@@ -16,7 +16,7 @@ I am an idiot.
 
 Now, I didn't really need to do a deep dive into the fundamentals of CS to figure that out - I could have just asked my wife when she lasted questioned her good judgement in deciding to be with me; she'd need about 10 milliseconds to come up with at least five examples
 
-All kidding aside, I figured it was time to take a bit more dedicated run at this - so I've decided to put some accountability at work. I'll be steadily working through the CS area, learning and practicing and (hopefully) bettering my understanding as I go - and I'll posting about what I've learned. Along the way, I'll try to break down the concepts so they can be easily understood - an ability I do have, thankfully.
+All kidding aside, I figured it was time to take a bit more dedicated run at this - so I've decided to put some accountability at work. I'll be steadily working through the CS area, learning and practicing and (hopefully) bettering my understanding as I go - and I'll be posting about what I've learned. Along the way, I'll try to break down the concepts so they can be easily understood - an ability I do have, thankfully.
 
 I'd like to have you along for the journey, particularly if you find yourself where I am - you know you can code, and you are even getting paid to do so - but you know there are things you don't know, and it bothers you.
 
