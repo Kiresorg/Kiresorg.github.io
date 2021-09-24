@@ -26,4 +26,4 @@ I'd like to thank two friends for some conversations that really helped me decid
 
 [Mike Rooney](https://www.linkedin.com/in/mike-rooney/), a co-worker and all-around great person, also made the case for learning this info - and pointed me towards some excellent references, most notably the book [Algorithms](https://jeffe.cs.illinois.edu/teaching/algorithms/) by University of Illinois professor Jeff Erickson.
 
-So, here we go. I hope you;ll join me - but either way, I'm leaving :)
+So, here we go. I hope you'll join me - but either way, I'm leaving :)
