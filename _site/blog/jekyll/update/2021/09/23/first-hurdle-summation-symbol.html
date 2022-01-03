@@ -1,0 +1,325 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>The First Hurdle - What is Summation and Why All the Symbols???</title>
+<meta name="description" content="The home page of Erik Gross, co-founder of The Tech Academy, author of &quot;You Are Not Stupid: Computers and Technology Simplified&quot; and &quot;Learn To Code in Hours with JavaScript&quot;, and software engineer at IBM, Providence and Travelliance.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@erikdavidgross" />
+<meta name="twitter:title" content="The First Hurdle - What is Summation and Why All the Symbols???" />
+<meta name="twitter:url" content="http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html" />
+<meta name="twitter:description" content="So I encountered my first hurdle in studying some Computer Science (CS) basics, and not suprisingly, it had to do with a misunderstood symbol." />
+<meta name="twitter:image" content="http://localhost:4000/assets/img/profile-photos/ErikHeadshot.jpg" />
+
+<meta property="og:title" content="The First Hurdle - What is Summation and Why All the Symbols???"/>
+<meta property="og:url" content="http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html"/>
+<meta property="og:site_name" content="Erik Gross"/>
+<meta property="article:author" content="https://www.facebook.com/erik.gross.902"/>
+<meta property="og:description" content="So I encountered my first hurdle in studying some Computer Science (CS) basics, and not suprisingly, it had to do with a misunderstood symbol."/>
+<meta property="og:image" content="http://localhost:4000/assets/img/profile-photos/ErikHeadshot.jpg"/>
+
+
+<link rel="canonical" href="http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html">
+<link rel="alternate" type="application/rss+xml" title="Erik Gross" href="http://localhost:4000">
+
+
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/icons/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/img/icons/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Montserrat:400,700">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+</head>
+<body>
+  <nav class="clearfix border-bottom border-light-gray">
+    <div class="left">
+      <a href="http://localhost:4000" class="button py2 button-transparent nav-button caps">Erik Gross</a>
+    </div>
+    <ul class="right list-reset m0 nav-collapse">
+      
+        <li class="inline-block m0">
+          <a href="/speaker" class="button button-transparent py2 h6 nav-button caps">speaker</a>
+        </li>
+      
+        <li class="inline-block m0">
+          <a href="/writer" class="button button-transparent py2 h6 nav-button caps">writer</a>
+        </li>
+      
+        <li class="inline-block m0">
+          <a href="/blog" class="button button-transparent py2 h6 nav-button caps">blog</a>
+        </li>
+      
+    </ul>
+  </nav>
+  
+    <header class="bg-splash-gray px3 py3 border-bottom border-light-gray">
+    <div class="container">
+  <div class="clearfix">
+    <a href="http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html">
+      <h1 class="mt0 mb1">
+        
+          The First Hurdle - What is Summation and Why All the Symbols???
+        
+      </h1>
+    </a>
+  </div>
+  <div>
+
+<div class="gray h6">
+  <span class="mr1 nowrap">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2021-09-23">Sep 23, 2021</time>
+  </span>
+  
+  
+    <span class="mr1 nowrap">
+      <i class="fa fa-comments"></i>
+      
+      <a href="#comments" class="disqus-comment-count" data-disqus-identifier="/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol">Comments</a>
+    </span>
+  
+  
+    
+    <span class="nowrap">
+      <i class="fa fa-clock-o"></i>
+      <span>3 min read</span>
+    </span>
+  
+</div>
+</div>
+</div>
+
+  
+
+  </header>
+  
+  
+  <main class="container block p3">
+    <article class="post">
+  <div class="post-content">
+    <p>So I encountered my first hurdle in studying some Computer Science (CS) basics, and not suprisingly, it had to do with a misunderstood symbol.</p>
+
+<p>In the first chapter of Jeff Erickson’s book <a href="https://jeffe.cs.illinois.edu/teaching/algorithms/">Algorithms</a>, he used a symbol I’ve seen often but never really understood:</p>
+
+<p><img src="/assets/img/blog/sigma.png" alt="Sigma" /></p>
+
+<p>This is the Greek letter “sigma”, and it corresponds to the English letter “S”.</p>
+
+<p>I’ve often seen it in Excel and other places, and I understood it generally to mean “sum”.</p>
+
+<p>In CS, though, it has a much more precise meaning - and after examining it a bit, I’m realizing that it is actually pretty important - and that I kind of already knew what it represented.</p>
+
+<p>In programming, we often have to add up a bunch of numbers. The sigma symbol is just a way to show what we want to add up. Consider this slightly more complex use of the sigma symbol:</p>
+
+<p><img src="/assets/img/blog/sigma_simple.png" alt="Sigma with numbers" /></p>
+
+<p>This represents “let’s add the number 2 together 5 times.”</p>
+
+<p>Let’s explore that a bit more.</p>
+
+<p>This symbol is actually answering three questions:</p>
+
+<ol>
+  <li>What number are we going to add together? Here, it’s the number 2.</li>
+  <li>What’s the amount of this number that we have to potentially add together? Here, it’s 5 - so we have a set of five “twos” to work with.</li>
+  <li>Which of that set of numbers will we start with? As in, do we start at the first one, or maybe the second one? Here, we’ll start with the first one of the five “twos” we have.</li>
+</ol>
+
+<p>The answer to question one (2) goes to the right of sigma.</p>
+
+<p>The answer to question two (5) goes above sigma.</p>
+
+<p>The answer to question three (1) goes below sigma.</p>
+
+<p>In other words, this whole set of numbers and symbols says, “take five twos and add them together, starting at the first two you have”.</p>
+
+<p>This is easily represented in code:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span> <span class="c1">// 10</span>
+</code></pre>
+</div>
+<p>Now we can really start to understand a slightly more complex use of sigma, like this:</p>
+
+<p><img src="/assets/img/blog/sigma-array.png" alt="Sigma with numbers" /></p>
+
+<p>Here, we are using symbols to represent the answers to our three questions:</p>
+
+<ol>
+  <li>The collection of numbers is called “a”</li>
+  <li>The amount of items in collection “a” is called “n”</li>
+  <li>The item in collection “a” that we will start our summation with is called “i”, and it is set to a value of 1 - that is, we will start our summation with the first item in collection “a”</li>
+</ol>
+
+<p>We see this all the time in code. The only wrinke here is that in most programming languages, collections usually identify their items starting with the number 0 instead of 1; that is, the first item in the collection is item 0.</p>
+
+<p>Here’s what that would look like in JavaScript:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 5</span>
+<span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span> <span class="c1">// 10</span>
+</code></pre>
+</div>
+
+<p>Here’s a diagram that explains it in a bit more formal manner:</p>
+
+<p><img src="/assets/img/blog/sigma-notation.png" alt="Sigma Notation" /></p>
+
+<p>So now I can start to read this CS stuff with a bit more understanding of the math symbols I’ll encounter.</p>
+
+<p>I hope this helped you; I can assure you it helped me to work it all out</p>
+
+  </div>
+  <div class="mt4 mb4"><div class="clearfix mxn1">
+  <div class="md-col md-col-6 px1">
+    
+      <a href="/blog/jekyll/update/2021/09/23/cs-journey.html">
+        <div class="h6 caps gray">Previous</div>
+        <h4 class="mt0">A Computer Science Journey</h4>
+      </a>
+    
+  </div>
+  <div class="md-col md-col-6 px1 right-align">
+    
+  </div>
+</div></div>
+  <div class="mt4"><div class="circle-line-image center mt1">
+    <a href="http://localhost:4000">
+      <img data-src="/assets/img/profile-photos/ErikHeadshot.jpg" alt="Erik Gross" class="lazyload border bg-white border-light-gray circle square-100">
+
+    </a>
+  </div>
+  <div class="clearfix">
+    <div class="sm-col sm-col-7">
+      <a href="http://localhost:4000 "><h3>Erik Gross</h3></a>
+      <p class="h5">
+        If you enjoyed this post, you may also like this book I co-authored:
+        <em><a href="http://mybook.to/youarenotstupid" target="_blank">You Are Not Stupid: Computers and Technology Simplified</a></em>
+      </p>
+    </div>
+    <div class="sm-col-right">
+      <h3>Share this post</h3>
+      
+
+
+
+
+<a href="https://twitter.com/share?url=http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html&amp;text=The%20First%20Hurdle%20-%20What%20is%20Summation%20and%20Why%20All%20the%20Symbols???" target="_blank" class="fa fa-fw fa-lg fa-twitter-square gray"></a>
+<a href="https://www.linkedin.com/shareArticle?url=http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html&amp;title=The%20First%20Hurdle%20-%20What%20is%20Summation%20and%20Why%20All%20the%20Symbols???" target="_blank" class="fa fa-fw fa-lg fa-linkedin-square gray"></a>
+<a href="https://www.facebook.com/sharer.php?u=http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html" target="_blank" class="fa fa-fw fa-lg fa-facebook-square gray"></a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html" target="_blank" class="fa fa-fw fa-lg fa-google-plus-square gray"></a>
+<a href="http://reddit.com/submit?url=http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html&amp;title=The%20First%20Hurdle%20-%20What%20is%20Summation%20and%20Why%20All%20the%20Symbols???" target="_blank" class="fa fa-fw fa-lg fa-reddit-square gray"></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://localhost:4000/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html&amp;t=The%20First%20Hurdle%20-%20What%20is%20Summation%20and%20Why%20All%20the%20Symbols???" target="_blank" class="fa fa-fw fa-lg fa-hacker-news gray"></a>
+    </div>
+  </div></div>
+</article>
+  </main>
+  
+    <section class="bg-splash-gray px3 py3 border-top border-light-gray">
+    <div class="container block p3">
+      <a name="comments"></a>
+      <h4>Comments</h4>
+      <div id="disqus_thread"></div>
+    </div>
+  </section>
+  
+  
+  <footer class="sticky-footer border-top border-light-gray gray h6">
+    <div class="sm-col px2">
+      &copy; 2022 Erik Gross.    
+    </div>
+    <div class="sm-col-right px2">
+      
+        
+        <a href="https://twitter.com/erikdavidgross" target="_blank" class="gray hint--top" data-hint="Twitter">
+          <i class="fa fa-fw fa-lg fa-twitter-square"></i>
+        </a>
+      
+        
+        <a href="https://www.linkedin.com/in/erikgrosstechacademy" target="_blank" class="gray hint--top" data-hint="LinkedIn">
+          <i class="fa fa-fw fa-lg fa-linkedin-square"></i>
+        </a>
+      
+        
+        <a href="https://www.facebook.com/erik.gross.902" target="_blank" class="gray hint--top" data-hint="Facebook">
+          <i class="fa fa-fw fa-lg fa-facebook-square"></i>
+        </a>
+      
+        
+        <a href="https://github.com/kiresorg/" target="_blank" class="gray hint--top" data-hint="GitHub">
+          <i class="fa fa-fw fa-lg fa-github-square"></i>
+        </a>
+      
+        
+        <a href="mailto:erikdavidtech@gmail.com" target="_blank" class="gray hint--top" data-hint="Email">
+          <i class="fa fa-fw fa-lg fa-envelope-square"></i>
+        </a>
+      
+    </div>
+  </footer>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'erikdavidtech-com';
+    var disqus_identifier = '/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      
+
+      
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3107613-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

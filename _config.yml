@@ -24,7 +24,8 @@ website_repo_url: "https://github.com/kiresorg/kiresorg.github.io"
 techacademy_url: "https://www.learncodinganywhere.com"
 youarenotstupid_url: "http://mybook.to/youarenotstupid"
 nnps_url: "https://en.wikipedia.org/wiki/Nuclear_Power_School"
-erik_email: "mailto:erik.d.gross@gmail.com"
+youtube_url: "https://www.youtube.com/channel/UCyJ8Tpn57JR_O2xm28xkvEA"
+erik_email: "mailto:erikdavidtech@gmail.com"
 
 # URLs
 contact_urls:
@@ -46,9 +47,9 @@ contact_urls:
     label: "GitHub"
     icon: "github-square"
   email:
-    url: "mailto:erik.d.gross@gmail.com"
+    url: "mailto:erikdavidtech@gmail.com"
     label: "Email"
-    value: "erik.d.gross@gmail.com"
+    value: "erikdavidtech@gmail.com"
     icon: "envelope-square"
 
 # Jekyll build settings
