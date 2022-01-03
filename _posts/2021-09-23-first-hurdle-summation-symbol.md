@@ -27,7 +27,7 @@ Let's explore that a bit more.
 This symbol is actually answering three questions:
 
 1. What number are we going to add together? Here, it's the number 2.
-2. What's the amount of this number that we have to potentially add together? Here, it's 5 - so we have five "twos" to work with.
+2. What's the amount of this number that we have to potentially add together? Here, it's 5 - so we have a set of five "twos" to work with.
 3. Which of that set of numbers will we start with? As in, do we start at the first one, or maybe the second one? Here, we'll start with the first one of the five "twos" we have.
 
 The answer to question one (2) goes to the right of sigma.
