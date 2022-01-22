@@ -27,7 +27,7 @@ Here are some simple definitions. They may use some terms you don't know yet; we
 
 > **Continuous Deployment**: The use of automation to deploy an application.
 
-While these three concepts can be explained simply, there are actually a lot of factors to understand about them, and about the context they're used in. We'll cover all of these factors - some in detail; some just enough to help you grasp what CI/CD is all about.
+While these three concepts can be explained fairly simply, there are actually a lot of factors to understand about them, and about the context they're used in. We'll cover all of these factors - some in detail; some just enough to help you grasp what CI/CD is all about.
 
 ## Context
 
