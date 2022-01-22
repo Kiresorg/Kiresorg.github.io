@@ -1,0 +1,640 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>What Should I Know About... CI/CD?</title>
+<meta name="description" content="The home page of Erik Gross, co-founder of The Tech Academy, author of &quot;You Are Not Stupid: Computers and Technology Simplified&quot; and &quot;Learn To Code in Hours with JavaScript&quot;, and software engineer at IBM, Providence and Travelliance.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@erikdavidgross" />
+<meta name="twitter:title" content="What Should I Know About... CI/CD?" />
+<meta name="twitter:url" content="http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html" />
+<meta name="twitter:description" content="What Should I Know About… CI/CD?" />
+<meta name="twitter:image" content="http://localhost:4000/assets/img/profile-photos/ErikHeadshot.jpg" />
+
+<meta property="og:title" content="What Should I Know About... CI/CD?"/>
+<meta property="og:url" content="http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html"/>
+<meta property="og:site_name" content="Erik Gross"/>
+<meta property="article:author" content="https://www.facebook.com/erik.gross.902"/>
+<meta property="og:description" content="What Should I Know About… CI/CD?"/>
+<meta property="og:image" content="http://localhost:4000/assets/img/profile-photos/ErikHeadshot.jpg"/>
+
+
+<link rel="canonical" href="http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html">
+<link rel="alternate" type="application/rss+xml" title="Erik Gross" href="http://localhost:4000">
+
+
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/icons/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/img/icons/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Montserrat:400,700">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+</head>
+<body>
+  <nav class="clearfix border-bottom border-light-gray">
+    <div class="left">
+      <a href="http://localhost:4000" class="button py2 button-transparent nav-button caps">Erik Gross</a>
+    </div>
+    <ul class="right list-reset m0 nav-collapse">
+      
+        <li class="inline-block m0">
+          <a href="/speaker" class="button button-transparent py2 h6 nav-button caps">speaker</a>
+        </li>
+      
+        <li class="inline-block m0">
+          <a href="/writer" class="button button-transparent py2 h6 nav-button caps">writer</a>
+        </li>
+      
+        <li class="inline-block m0">
+          <a href="/blog" class="button button-transparent py2 h6 nav-button caps">blog</a>
+        </li>
+      
+    </ul>
+  </nav>
+  
+    <header class="bg-splash-gray px3 py3 border-bottom border-light-gray">
+    <div class="container">
+  <div class="clearfix">
+    <a href="http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html">
+      <h1 class="mt0 mb1">
+        
+          What Should I Know About... CI/CD?
+        
+      </h1>
+    </a>
+  </div>
+  <div>
+
+<div class="gray h6">
+  <span class="mr1 nowrap">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2022-01-20">Jan 20, 2022</time>
+  </span>
+  
+  
+    <span class="mr1 nowrap">
+      <i class="fa fa-comments"></i>
+      
+      <a href="#comments" class="disqus-comment-count" data-disqus-identifier="/blog/jekyll/update/2022/01/20/wsika-cicd">Comments</a>
+    </span>
+  
+  
+    
+    <span class="nowrap">
+      <i class="fa fa-clock-o"></i>
+      <span>18 min read</span>
+    </span>
+  
+</div>
+</div>
+</div>
+
+  
+
+  </header>
+  
+  
+  <main class="container block p3">
+    <article class="post">
+  <div class="post-content">
+    <h1 id="what-should-i-know-about-cicd">What Should I Know About… CI/CD?</h1>
+
+<p>Apparently CI/CD is, like, SUPER important. And everyone should use it, and it will solve all your problems, and if you’re not doing it you’re either stupid or you just like pain and heartache.</p>
+
+<p>But what exactly is it? And is <em>any</em> of that true?</p>
+
+<h2 id="definitions">Definitions</h2>
+
+<p>Right out of the gate, you should know that CI/CD <em>looks</em> like two acronyms (CI and CD), but it’s actually <em>three</em> terms:</p>
+<ul>
+  <li>Continuous Integration</li>
+  <li>Continuous Delivery</li>
+  <li>Continuous Deployment</li>
+</ul>
+
+<p>So what do these terms mean? Well, they all revolve around the use of <em>automation</em> - letting a computer program perform actions for you that you might otherwise do manually. The only difference between each lies in <em>what</em> we are automating.</p>
+
+<p>Here are some simple definitions. They may use some terms you don’t know yet; we will cover each one as we go along.</p>
+
+<blockquote>
+  <p><strong>Continuous Integration</strong>: The use of automation to integrate code changes into a source code repository so that at least one branch is always able to be compiled.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Continuous Delivery</strong>: The use of automation to produce an application build package capable of being deployed.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Continuous Deployment</strong>: The use of automation to deploy an application.</p>
+</blockquote>
+
+<p>While these three concepts can be explained simply, there are actually a lot of factors to understand about them, and about the context they’re used in. We’ll cover all of these factors - some in detail; some just enough to help you grasp what CI/CD is all about.</p>
+
+<h2 id="context">Context</h2>
+
+<h3 id="trust">Trust</h3>
+
+<p>The basic theory behind CI/CD is this: if the automated systems we use in writing, building and deploying applications create enough trust throughout the organization, we can put our attention on more valuable areas: <em>faster</em> IT service delivery of <em>safer</em> applications to <em>happier</em> customers.</p>
+
+<h3 id="devops">DevOps</h3>
+
+<p>The tools and processes of CI/CD are useful all on their own - but often, companies implement them as part of an overall DevOps strategy or culture.</p>
+
+<p>DevOps, which stands for “Development/Operations”, isn’t a set of tools or processes - rather, it’s a culture.</p>
+
+<p>It emphasizes rapid delivery of IT services through the adoption of agile, lean practices throughout a company’s entire structure. It’s all about improving collaboration between “development” (the folks who design, build and test the applications) and “operations” (the folks who host those applications).</p>
+
+<p>DevOps implementations use technology - particularly <em>automation</em> - to achieve this goal of rapid IT service delivery.</p>
+
+<h3 id="the-power-of-automation">The Power of Automation</h3>
+
+<p>Whether you’re looking at CI/CD all on its own or as part of a DevOps culture shift, the primary thing you’re looking at is <em>automation</em>.  This isn’t a novel idea - after all, one of the main reasons we made computers in the first place is to automate things we could do ourselves.</p>
+
+<p>So when you’re trying to understand CI/CD, start with automation - what are we trying to automate, and why?</p>
+
+<h3 id="so-what-are-we-automating">So What Are We Automating?</h3>
+
+<blockquote>
+  <p>We’re automating the key tasks involved in: writing computer code, turning that code into a computer program that can be deployed, and actually deploying the computer program.</p>
+</blockquote>
+
+<p>In order to really understand and appreciate CI/CD, you’ve got to have at least a basic understanding of how software is made. How do we go from instructions a developer writes on a screen, to a running computer program being used by a person or by another computer program?</p>
+
+<p>This is a subject you could study in great detail, but you don’t need to for our purposes. Let’s just look at the basic series of steps:</p>
+
+<ol>
+  <li>A developer writes a program in <em>code</em> - instructions written in a human-readable language (like JavaScript or Python, for example).</li>
+  <li>A special program (often called a <em>compiler</em>) converts that <em>source code</em> into a form that a computer can actually understand and obey - a form called <em>machine language</em>.</li>
+  <li>This set of machine language instructions, called an <em>executable</em> (because it’s in a form that a computer can execute), is your actual program. Now we copy it onto a computer where you want it to be used by a person or by another program.</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/blog/compile.svg" alt="compile.svg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Source code is compiled, resulting in an executable</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="source-code">Source Code</h3>
+
+<p>There are many different approaches to managing the source code for an application in software development. Most of them make use of multiple “branches” of code, each of which contains a unique version of the text files that make up the application’s code. A collection of source code branches for an application is called a repository, or “repo”.</p>
+
+<p>There is a lot to know about “source code management” (SCM), and it’s another area you should study.</p>
+
+<p>For our purposes, it’s enough to know that Continuous Integration works against the branches in an application’s repo. More precisely, a CI setup will wait for certain events to occur, at which it will try to automatically integrate an incoming code change into a branch in the repo.</p>
+
+<h3 id="where-does-all-this-automation-happen-anyway">Where Does All This Automation Happen, Anyway?</h3>
+
+<p>Any computer program needs a place to live - an “environment” that contains everything it needs in order to run, so it can provide the service it was designed to deliver.</p>
+
+<p>There’s a lot to know about everything that goes into an application environment, but that’s a subject for another time. For now, let’s just cover the basics. Here are some of the things <em>other than your actual computer program</em> that you’d need in an environment for that program:</p>
+<ul>
+  <li>An operating system</li>
+  <li>Any programs your program will need to operate (for example, a web server program)</li>
+  <li>Any runtimes needed by your program (runtimes are continuously-running computer programs that let your program interact with the computer’s basic functions, like file system access)</li>
+  <li>Any database programs your program will need to access as it does its work</li>
+</ul>
+
+<p>All of these parts, and often many others, are part of the environment for your program. Software development makes use of lots of environments.</p>
+
+<p>As an aside, one of the main benefits of “the cloud” is that these environments can be created quickly, on demand - and you can specify their exact configuration.</p>
+
+<h4 id="moving-your-application-through-environments">Moving Your Application Through Environments</h4>
+
+<p>As a computer program is developed, it goes through several stages. Each stage has its own purpose, but overall, we are trying to get the program closer to our final goal: It is in the hands of our end users, delivering reliable service that makes them happy.</p>
+
+<p>Each of these stages usually needs its own environment - its own complete, functioning system into which you can place your program. While the names of these stages may vary from company to company, they usually follow this sort of sequence:</p>
+<ul>
+  <li>Development</li>
+  <li>Quality Assurance</li>
+  <li>Staging</li>
+  <li>Operations</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/blog/environments.svg" alt="environments.svg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Typical environments for a software application</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+From a big picture point of view, we are moving our program through these environments, so we can do various tasks along the path to a fully-deployed application out in the “Operations” environment (often call “Production” or “Prod”).</p>
+
+<p>This is where much of our automation in CI/CD will happen.</p>
+
+<h2 id="principles-and-theory">Principles and Theory</h2>
+
+<h3 id="what-are-we-automating">What Are We Automating?</h3>
+<p>Let’s get a little more precise here, and look at <em>what</em> exactly we are automating in each of the three elements of CI/CD.</p>
+
+<h4 id="continuous-integration">Continuous Integration</h4>
+
+<p>As we talked about earlier, Continuous Integration is all about using automation to make sure you’ve always got at least one branch of the application’s code that can be compiled.</p>
+
+<blockquote>
+  <p>Continuous Integration: The use of automation to integrate code changes into a source code repository so that at least one branch is always able to be compiled.</p>
+</blockquote>
+
+<p>This ensures the company won’t ever be in a position where it can’t deliver a working product of some sort.</p>
+
+<p>So what exactly are we automating with CI? <em>The integration of a code change into a code branch.</em> We are letting a computer program decide whether or not to allow a change to our code base.</p>
+
+<p>It’s important to consider that CI only works with <em>text files</em> - not with a running application. The code base for an application is just a collection of text files, containing instructions written in a human-readable language <em>that a computer cannot execute</em> - so any tasks you automate in this area can only work with those text files. This means you won’t be automating things like application startup, feature testing, load testing, etc. - all those tasks require a running application, and at this stage, all we have to work with are text code files.</p>
+
+<p>So in CI, we use automation to create trust by getting the answers to these questions:</p>
+
+<ul>
+  <li>Can the code be compiled?</li>
+  <li>Does the code meet any standards we’ve defined for code quality (formatting, comments, etc.)?</li>
+  <li>Does the code pass any static code testing we’ve defined for it?</li>
+</ul>
+
+<blockquote>
+  <p>“Static code analysis” is testing you can do on text files. Besides code quality, one very important type of test you <em>can</em> perform on text code files is called “unit testing”. Unit tests are unique in that you don’t need to create a compiled, executable application in order to run them. Unit testing is another area you should know about.</p>
+</blockquote>
+
+<p>So if you are going to use Continuous Integration, you’ll automate these tasks:</p>
+
+<ul>
+  <li>code compilation</li>
+  <li>static code analysis</li>
+  <li>unit testing</li>
+</ul>
+
+<p>Put into flowchart form, it might look like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/blog/ci-flowchart.svg" alt="ci-flowchart.svg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Flowchart for a typical Continuous Integration process</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+Remember, since we are trying to create trust, if errors are encountered during the process the whole effort will be stopped. Needed notifications will be sent out, and conditions will remain as they were before. In this case, that means that the code change that triggered the process will <em>not</em> be entered into the branch of source code.</p>
+
+<h4 id="continous-delivery">Continous Delivery</h4>
+
+<p>This brings us to the next action we can automate: delivery of a potentially-installable version of our application.</p>
+
+<blockquote>
+  <p>Continuous Delivery: The use of automation to produce an application build package capable of being deployed.</p>
+</blockquote>
+
+<p>Now that we’ve verified that we have code that can compile and that meets any static code requirements we’ve set up, we have a decision to make: will we use automation to actually build the application and deploy it into a working environment, or will we simply build the application and make it available for people to deploy into an environment when they wish?</p>
+
+<p>This is the difference between continuous <em>delivery</em> and <em>deployment</em>.</p>
+
+<p>Let’s examine continuous delivery. First of all, what are we delivering?</p>
+
+<h5 id="the-build-package">The Build Package</h5>
+
+<p>What we’re going to deliver is called a “build package”. It’s a collection of several things, all of which are needed if you were actually going to install the application in an environment so you could run the application.</p>
+
+<p>We do this by “building” our application - running a specialized program (a “build agent”) that compiles our source code, gathers together needed files, and copies them to a known location. The output of a “build” is called a “build package”.</p>
+
+<p>So what might be in a build package?</p>
+
+<p>First of all, you are of course going to have the compiled, executable version of your application - after all, this is what the whole process is about.</p>
+
+<p>There are a number of other items - often called “artifacts” - that might be needed as well. Again, this subject (software builds) is a deep one - but from a high level, here’s what else might be in a build package:</p>
+
+<ul>
+  <li>configuration files (text files that contain data your application might need while it’s running - things like info on how to connect to a database, or settings for how to handle user authentication, etc.). These files are usually stored in the source code repo, alongside the actual source code files.</li>
+  <li>third-party libraries (collections of code, usually centered around specific types of operations) that your program might need while it’s running (also called “dependencies”, as your application depends on them in order to operate). These are obtained from a trusted source.</li>
+  <li>audio/visual assets your application might need.</li>
+  <li>log files created during the build process.</li>
+</ul>
+
+<p>So if you are going to use Continuous Delivery, you’ll automate these tasks:</p>
+
+<ul>
+  <li>create an executable for the application</li>
+  <li>gather any needed dependencies</li>
+  <li>gather any needed config files</li>
+  <li>gather any needed audio/visual assets</li>
+  <li>create and include any specified logs</li>
+  <li>put copies of all of these items (artifacts) in a specific location</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/blog/build-package.svg" alt="build-package.svg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Diagram of the build process</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+Remember, since we are trying to create trust, if errors are encountered during the process the whole effort will be stopped. Needed notifications will be sent out, and conditions will remain as they were before. In this case, that means that whatever previous build package was available will remain available, marked in some way as the most recent trusted build.</p>
+
+<h4 id="continuous-deployment">Continuous Deployment</h4>
+
+<p>If we have gotten this far, we have a trusted source code branch which we have used to create a trusted build package for our application. If we want to continue using automation to push the process further, we are in the realm of continuous deployment.</p>
+
+<blockquote>
+  <p>Continuous Deployment: The use of automation to deploy an application.</p>
+</blockquote>
+
+<p>It helps to look at what process you would take if you were to manually deploy an application. It might look something like this:</p>
+
+<ul>
+  <li>Make sure you have the build package that was used to deploy the <em>current</em> running version of the application, so you can revert to this if you run into a problem while installing the new build package</li>
+  <li>Copy the build package contents to our application’s intended environment, overwriting the current files</li>
+  <li>Start up the application</li>
+  <li>Run tests to verify the new version of the application can be safely left running in the environment</li>
+  <li>If the application isn’t running properly (won’t start up; failed vital tests), use the previous build package to revert (also called “roll back”) to the previous set up</li>
+</ul>
+
+<p>So, if you are going to use Continuous Deployment, you’ll automate these tasks:</p>
+
+<ul>
+  <li>verify previous build package available</li>
+  <li>connect to specified environment and copy build package to specified location</li>
+  <li>start application</li>
+  <li>run any specified tests</li>
+  <li>if tests fail, use previous build package to roll back the environment</li>
+</ul>
+
+<h2 id="pipelines-agents-and-workflows">Pipelines, Agents and Workflows</h2>
+
+<p>There’s another term that is used in a couple of different ways in CI/CD: pipeline.</p>
+
+<p>A useful definition comes from <a href="https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html">InfoWorld</a>:</p>
+
+<blockquote>
+  <p>“Continuous integration (CI) and continuous delivery (CD) embody a culture, set of operating principles, and collection of practices that enable application development teams to deliver code changes more frequently and reliably. The implementation is also known as the CI/CD pipeline.”</p>
+</blockquote>
+
+<p>So a “pipeline” is the implementation of an idea.</p>
+
+<p>Most of the time when people use the term pipeline, they are talking about a set of items used in automating code integration, delivery and deployment. These items might be:</p>
+
+<ul>
+  <li>Agent: This is the actual computer program that performs automated tasks on your behalf (that’s why it’s called an agent)</li>
+  <li>Workflow: This is a script that specifies the tasks you want automated</li>
+  <li>Build machine: This is a computer where the automation work is performed. It’s not the place where your application will eventually live; it’s the place where the CI/CD work is done</li>
+  <li>Environment: This is the place your application will live and run</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/blog/pipeline.svg" alt="pipeline.svg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Diagram of a pipeline</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="cicd-providers-and-tools">CI/CD Providers and Tools</h2>
+
+<p>This system requires a few different service providers in order to work. Here are some of the main types of providers and tools, along with some of the more popular at the time this was written (early 2022):</p>
+
+<ul>
+  <li>Source Control Management (SCM) providers (GitHub; Atlassian Bitbucket; GitLab SCM, etc.)</li>
+  <li>CI/CD providers (GitHub Actions; Jenkins; CircleCI; TravisCI; Maven; Atlassian Bamboo; AWS CodeBuild, etc.)</li>
+  <li>Scripting language to write workflows (Python; YAML)</li>
+  <li>Testing frameworks (Selenium; JUnit; Appium; Cucumber, etc.)</li>
+</ul>
+
+<h2 id="bringing-it-all-together">Bringing It All Together</h2>
+
+<p>Here’s a one-page summary of the subject:</p>
+
+<p>When you build software, you keep the source code for the software in a repo that has different branches.</p>
+
+<p>Using continuous integration, we can automate the process of making sure one of those branches is always able to be compiled, and that the code meets any quality and unit testing requirements.</p>
+
+<p>Using continuous delivery, we can automate the process of using that code branch to produce a set of files that we could use to install the working software in an environment <em>if we wanted to</em>.</p>
+
+<p>Using continous deployment, we can automate the process of actually installing and testing that version of the software in an environment.</p>
+
+<p>The goal is to increase trust in the automation system and in the quality of the tests on your code and the application.</p>
+
+<p>As trust increases, more tasks in the process can be automated and faster application development and delivery can occur.</p>
+
+<p>How it works:</p>
+
+<p>You write a script called a “workflow” that describes the various tasks you want to automate.</p>
+
+<p>In this workflow script, you specify what steps to perform, where to do the work (the build machine), what to do if errors occur, and which environments to deploy the application to (if desired).</p>
+
+<p>A CI/CD provider with access to your source code, your workflow script and your deployment environments watches your source code branch for incoming code changes.</p>
+
+<p>When a code change is submitted, it triggers execution of your workflow script.</p>
+
+<p>The CI/CD provider starts a program (the “agent”), which attempts to perform the tasks in the workflow script.</p>
+
+<p>As long as these automated actions don’t produce fatal errors, the agent continues to execute the specified tasks.</p>
+
+<p>If fatal errors are encountered, the current task is reverted, the workflow is stopped, and notifications are sent out to alert concerned parties.</p>
+
+<h2 id="variations-on-a-theme">Variations on a Theme</h2>
+
+<p>One final note to keep in mind if you’re sorting out how CI/CD works at your company: sometimes these three terms are used in odd ways.</p>
+
+<p>Nearly any task in this area can be automated, and people can use terminology any way they like. This means you’ll see systems with a bit more complexity or nuance than what we’ve covered, and you’ll see terms being used in ways that seem to differ from what we’ve covered.</p>
+
+<p>The fundamentals we’ve covered here always apply, and they will help you sort out your specific setup.</p>
+
+<p>As an example, you might find a “Continuous Integration” system that goes beyond simply verifying that the code can compile and that the code meets any code quality/unit testing requirements. Systems exist that, on a code change, actually perform a full build and deployment of the application using temporary environments that mimic the actual environment where the application will eventally live. If this “soft deploy” fails, the code change won’t be permitted.</p>
+
+<p>Just remember the basics of this subject and you’ll be able to work your way through any CI/CD system.</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>Pluralsight <a href="https://app.pluralsight.com/library/courses/devops-foundations-continuous-integration-continuous-delivery/table-of-contents">course</a> on DevOps and CI/CD</p>
+
+<h2 id="recommended-study">Recommended Study</h2>
+
+<p>Related areas you should explore:</p>
+
+<ul>
+  <li>DevOps</li>
+  <li>Distributed architecture</li>
+  <li>Containerization (Docker/Kubernetes)</li>
+  <li>Source Control Management</li>
+  <li>Unit Testing</li>
+</ul>
+
+<h2 id="what-else-would-you-like-to-know-about">What Else Would You Like To Know About?</h2>
+
+<p>I hope this has helped. What other technology subjects would you like to know about? Let me know:</p>
+
+<p>erikdavidtech@gmail.com</p>
+
+  </div>
+  <div class="mt4 mb4"><div class="clearfix mxn1">
+  <div class="md-col md-col-6 px1">
+    
+      <a href="/blog/jekyll/update/2021/09/23/first-hurdle-summation-symbol.html">
+        <div class="h6 caps gray">Previous</div>
+        <h4 class="mt0">The First Hurdle - What is Summation and Why All the Symbols???</h4>
+      </a>
+    
+  </div>
+  <div class="md-col md-col-6 px1 right-align">
+    
+  </div>
+</div></div>
+  <div class="mt4"><div class="circle-line-image center mt1">
+    <a href="http://localhost:4000">
+      <img data-src="/assets/img/profile-photos/ErikHeadshot.jpg" alt="Erik Gross" class="lazyload border bg-white border-light-gray circle square-100">
+
+    </a>
+  </div>
+  <div class="clearfix">
+    <div class="sm-col sm-col-7">
+      <a href="http://localhost:4000 "><h3>Erik Gross</h3></a>
+      <p class="h5">
+        If you enjoyed this post, you may also like this book I co-authored:
+        <em><a href="http://mybook.to/youarenotstupid" target="_blank">You Are Not Stupid: Computers and Technology Simplified</a></em>
+      </p>
+    </div>
+    <div class="sm-col-right">
+      <h3>Share this post</h3>
+      
+
+
+
+
+<a href="https://twitter.com/share?url=http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html&amp;text=What%20Should%20I%20Know%20About...%20CI/CD?" target="_blank" class="fa fa-fw fa-lg fa-twitter-square gray"></a>
+<a href="https://www.linkedin.com/shareArticle?url=http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html&amp;title=What%20Should%20I%20Know%20About...%20CI/CD?" target="_blank" class="fa fa-fw fa-lg fa-linkedin-square gray"></a>
+<a href="https://www.facebook.com/sharer.php?u=http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html" target="_blank" class="fa fa-fw fa-lg fa-facebook-square gray"></a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html" target="_blank" class="fa fa-fw fa-lg fa-google-plus-square gray"></a>
+<a href="http://reddit.com/submit?url=http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html&amp;title=What%20Should%20I%20Know%20About...%20CI/CD?" target="_blank" class="fa fa-fw fa-lg fa-reddit-square gray"></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://localhost:4000/blog/jekyll/update/2022/01/20/wsika-cicd.html&amp;t=What%20Should%20I%20Know%20About...%20CI/CD?" target="_blank" class="fa fa-fw fa-lg fa-hacker-news gray"></a>
+    </div>
+  </div></div>
+</article>
+  </main>
+  
+    <section class="bg-splash-gray px3 py3 border-top border-light-gray">
+    <div class="container block p3">
+      <a name="comments"></a>
+      <h4>Comments</h4>
+      <div id="disqus_thread"></div>
+    </div>
+  </section>
+  
+  
+  <footer class="sticky-footer border-top border-light-gray gray h6">
+    <div class="sm-col px2">
+      &copy; 2022 Erik Gross.    
+    </div>
+    <div class="sm-col-right px2">
+      
+        
+        <a href="https://twitter.com/erikdavidgross" target="_blank" class="gray hint--top" data-hint="Twitter">
+          <i class="fa fa-fw fa-lg fa-twitter-square"></i>
+        </a>
+      
+        
+        <a href="https://www.linkedin.com/in/erikgrosstechacademy" target="_blank" class="gray hint--top" data-hint="LinkedIn">
+          <i class="fa fa-fw fa-lg fa-linkedin-square"></i>
+        </a>
+      
+        
+        <a href="https://www.facebook.com/erik.gross.902" target="_blank" class="gray hint--top" data-hint="Facebook">
+          <i class="fa fa-fw fa-lg fa-facebook-square"></i>
+        </a>
+      
+        
+        <a href="https://github.com/kiresorg/" target="_blank" class="gray hint--top" data-hint="GitHub">
+          <i class="fa fa-fw fa-lg fa-github-square"></i>
+        </a>
+      
+        
+        <a href="mailto:erikdavidtech@gmail.com" target="_blank" class="gray hint--top" data-hint="Email">
+          <i class="fa fa-fw fa-lg fa-envelope-square"></i>
+        </a>
+      
+    </div>
+  </footer>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'erikdavidtech-com';
+    var disqus_identifier = '/blog/jekyll/update/2022/01/20/wsika-cicd';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      
+
+      
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3107613-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
