@@ -1,0 +1,662 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>How Does Recursion Work Anyway?</title>
+<meta name="description" content="The home page of Erik Gross, co-founder of The Tech Academy, author of &quot;You Are Not Stupid: Computers and Technology Simplified&quot; and &quot;Learn To Code in Hours with JavaScript&quot;, and software engineer at IBM, Providence and Travelliance.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@erikdavidgross" />
+<meta name="twitter:title" content="How Does Recursion Work Anyway?" />
+<meta name="twitter:url" content="http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html" />
+<meta name="twitter:description" content="What is Recursion and How Does it Work?" />
+<meta name="twitter:image" content="http://localhost:4000/assets/img/profile-photos/ErikHeadshot.jpg" />
+
+<meta property="og:title" content="How Does Recursion Work Anyway?"/>
+<meta property="og:url" content="http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html"/>
+<meta property="og:site_name" content="Erik Gross"/>
+<meta property="article:author" content="https://www.facebook.com/erik.gross.902"/>
+<meta property="og:description" content="What is Recursion and How Does it Work?"/>
+<meta property="og:image" content="http://localhost:4000/assets/img/profile-photos/ErikHeadshot.jpg"/>
+
+
+<link rel="canonical" href="http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html">
+<link rel="alternate" type="application/rss+xml" title="Erik Gross" href="http://localhost:4000">
+
+
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/icons/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/img/icons/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Montserrat:400,700">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+</head>
+<body>
+  <nav class="clearfix border-bottom border-light-gray">
+    <div class="left">
+      <a href="http://localhost:4000" class="button py2 button-transparent nav-button caps">Erik Gross</a>
+    </div>
+    <ul class="right list-reset m0 nav-collapse">
+      
+        <li class="inline-block m0">
+          <a href="/speaker" class="button button-transparent py2 h6 nav-button caps">speaker</a>
+        </li>
+      
+        <li class="inline-block m0">
+          <a href="/writer" class="button button-transparent py2 h6 nav-button caps">writer</a>
+        </li>
+      
+        <li class="inline-block m0">
+          <a href="/blog" class="button button-transparent py2 h6 nav-button caps">blog</a>
+        </li>
+      
+    </ul>
+  </nav>
+  
+    <header class="bg-splash-gray px3 py3 border-bottom border-light-gray">
+    <div class="container">
+  <div class="clearfix">
+    <a href="http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html">
+      <h1 class="mt0 mb1">
+        
+          How Does Recursion Work Anyway?
+        
+      </h1>
+    </a>
+  </div>
+  <div>
+
+<div class="gray h6">
+  <span class="mr1 nowrap">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2022-04-04">Apr 04, 2022</time>
+  </span>
+  
+  
+    <span class="mr1 nowrap">
+      <i class="fa fa-comments"></i>
+      
+      <a href="#comments" class="disqus-comment-count" data-disqus-identifier="/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway">Comments</a>
+    </span>
+  
+  
+    
+    <span class="nowrap">
+      <i class="fa fa-clock-o"></i>
+      <span>18 min read</span>
+    </span>
+  
+</div>
+</div>
+</div>
+
+  
+
+  </header>
+  
+  
+  <main class="container block p3">
+    <article class="post">
+  <div class="post-content">
+    <h1 id="what-is-recursion-and-how-does-it-work">What is Recursion and How Does it Work?</h1>
+
+<p>Okay, so I’m going to try to explain recursion in a simple way.</p>
+
+<p>In order to understand recursion, you first need to understand these concepts:</p>
+
+<ul>
+  <li>path of execution</li>
+  <li>sub-program</li>
+  <li>execution context</li>
+  <li>call stack</li>
+</ul>
+
+<h2 id="path-of-execution">Path of Execution</h2>
+<p>Computer programs are essentially a series of sequential instructions, performed (or executed) by the computer.</p>
+
+<p>This sequence is called the “path of execution”.</p>
+
+<p>Programs will have a “main” path of execution - the one that starts with the first instruction in the program, and ends with the last.</p>
+
+<p>Along the way, as this series of instructions is performed  (the main execution path), we may need to call upon smaller sets of instructions that are designed to be used when needed.</p>
+
+<p>This brings us to sub-programs.</p>
+
+<h2 id="sub-programs">Sub-programs</h2>
+<p>These are essentially small programs, with a series of instructions that are executed in sequential order - just like those in the main execution path.</p>
+
+<p>Depending on the programming language used, these may be called subprograms, or functions, or methods - or some other term. The concept remains the same: these are small programs that can be used as needed to perform tasks that the main program may need from time to time as it runs throught the main execution path.</p>
+
+<p>From this point on, we’ll use the term “function” to refer to this sub-program concept.</p>
+
+<p>The action of asking one of these functions to do its work is referred to as “calling” the function.</p>
+
+<h2 id="execution-context">Execution context</h2>
+<p>Computers can only execute one instruction at a time. The current series of instructions being performed is called the “execution context” - it is where the focus of the computer is currently placed.</p>
+
+<p>When a computer program starts, the execution context is in the main execution path.</p>
+
+<p>If a function is called from the main execution path, the context now shifts to the execution path inside the called function. Once that execution path is completed, the context returns to the main execution path.</p>
+
+<p>The same principle applies if one function calls another function - while that second function is being executed, context shifts to it. When that second execution path is completed, context returns to the first function. When that execution path is completed, context returns to wherever the context was when that first function was called.</p>
+
+<h2 id="the-call-stack">The call stack</h2>
+<p>The computer keeps track of function calls in a list called the “call stack”.</p>
+
+<p>When a function call is made, that call goes on the list. It stays on the list until the path of execution in the called function is completed. At that point, the call is removed from the list, and context returns to the execution path where the function was called.</p>
+
+<p>It is entirely possible that one function will call a second function before the first is done executing. In this case, both calls will be on the call stack.</p>
+
+<p>The call stack operates on a “First In, Last Out” principle. This means that each successive call is placed at the top of the list, and the top call is the first one that can be removed.</p>
+
+<p>This means that, where there are multiple calls in the stack, the most recent one must be completed before any previous calls can be completed.</p>
+
+<h3 id="super-ultra-important-point-if-you-ever-want-to-understand-recursion"><strong>Super Ultra Important Point if You Ever Want to Understand Recursion</strong></h3>
+<p>Before we move on, I want to make one point - a point that is CRITICAL to understanding recursion:</p>
+
+<p><strong>EVERY CALL TO A SPECIFIC FUNCTION IS A SEPARATE ACTION BY THE COMPUTER, AND IS TRACKED SEPARATELY BY THE COMPUTER.</strong></p>
+
+<p>This means you can have two function calls, each to the <em>same function</em>, each of them running at the same time. Each call is on the stack, with the most recent being placed above the one immediately prior.</p>
+
+<p>While the <em>name</em> of the function being called is the same in each case, the two function calls have <em>nothing to do with each other</em> - they are each separate actions as far as the computer is concerned.</p>
+
+<p>You can think of each function call as a separate “mini-program”, being tracked by the computer. The actions in one are not related to the actions in another, and the <em>data</em> in one is not related to the data in another.</p>
+
+<p>We will come back to this point - which is, I stress again, super important in understanding recursion.</p>
+
+<h2 id="recursive-functions">Recursive functions</h2>
+<p>We have covered these concepts:</p>
+<ul>
+  <li>path of execution</li>
+  <li>sub-program</li>
+  <li>execution context</li>
+  <li>call stack</li>
+</ul>
+
+<p>Now let’s look at recursion.</p>
+
+<blockquote>
+  <p>Recursion is the action of calling a function that will, in turn, call itself.</p>
+</blockquote>
+
+<blockquote>
+  <p>This can happen multiple times. Each such call is added to the call stack.</p>
+</blockquote>
+
+<blockquote>
+  <p>This stack of function calls will continue until some specific condition, checked in each function call, is met. This condition is called the “base case”.</p>
+</blockquote>
+
+<blockquote>
+  <p>Once the base case is met, the function call <em>in which it is met</em> can complete - at which point it comes off the stack.</p>
+</blockquote>
+
+<blockquote>
+  <p>The computer then revisits each previous function call, completing any instructions not yet performed and removing the call from the stack as it completes.</p>
+</blockquote>
+
+<blockquote>
+  <p>Once all function calls have completed, the recursive action itself is complete.</p>
+</blockquote>
+
+<h3 id="iterative-approach-vs-recursive-approach">Iterative approach vs. recursive approach</h3>
+<p>Any action you perform in this manner can also be performed in an iterative manner (using a <code class="highlighter-rouge">while</code> loop or a <code class="highlighter-rouge">for</code> loop, for example).</p>
+
+<p>Let’s examine how we’d approach a problem with an iterative approach; then we’ll look at approaching the same problem with a recursive approach.</p>
+
+<p>Since it’s used so often in recursion, let’s take up the problem of calculating the <em>factorial</em> of a given number.</p>
+
+<p>It may have been a while since you studied factorials in mathematics, so here’s a refresher:</p>
+
+<blockquote>
+  <p>The <em>factorial</em> of a given number is the result of multiplying the whole numbers (no fractions) in a set of numbers.</p>
+</blockquote>
+
+<p>For example: the factorial of 5 would look like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>5x4x3x2x1 = 120
+</code></pre>
+</div>
+
+<p>If you have any confusion on this, please take your time and do the math.</p>
+
+<p>Okay, let’s move on.</p>
+
+<h4 id="iterative-solution">Iterative solution</h4>
+
+<p>Let’s solve this with an iterative approach - a <code class="highlighter-rouge">for</code> loop:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getFactorialWithLoop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">result</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">*</span> <span class="nx">i</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s2">"n has to be positive"</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getFactorialWithLoop</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="c1">// output: 120</span>
+</code></pre>
+</div>
+
+<p>Use a JavaScript editor to write and run this code. The output should be 120.</p>
+
+<h4 id="recursive-solution">Recursive solution</h4>
+<p>Now let’s approach this same problem with a recursive approach.</p>
+
+<p>A recursive approach works like this:</p>
+<ul>
+  <li>We identify the core data processing task we want to use in solving a problem.</li>
+  <li>Then we apply that task to the problem some number of times, each time reducing the size of the task.</li>
+  <li>When we have reduced the size of the problem such that the core task doesn’t need to be performed any longer, we can stop reducing</li>
+  <li>We take the work of each previous task up in turn</li>
+  <li>The combined work of each application of the task ends up being the overall solution to the task.</li>
+</ul>
+
+<p>Let’s use that approach to work out what we need to do to solve factorials in a recursive manner:</p>
+
+<blockquote>
+  <p>The problem: We need to calculate the total result of multiplying each whole number in a set of numbers, where the set starts at some positive number and contains all positive whole numbers less than that number.</p>
+</blockquote>
+
+<blockquote>
+  <p>The “core data processing task” we want to use in solving the problem: Multiply a number by the whole number that is one less than itself:</p>
+  <div class="highlighter-rouge"><pre class="highlight"><code>x = y x (y-1)
+</code></pre>
+  </div>
+</blockquote>
+
+<p>Let’s examine what this would look like for calculating the factorial of 3.</p>
+
+<p>We can write it out like this (note that the exclamation point is used here to represent the factorial operation):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>!3 = 3 x 2 x 1
+!3 = 6
+</code></pre>
+</div>
+
+<p>Remember that we are going to apply the “core data processing task” to reduce the size of the problem.</p>
+
+<p>The first time we apply this task, we multiply 3 times 2.</p>
+
+<p>The size of our problem has now been reduced - all that is left is to take the result of our first task and multiple it by 1.</p>
+
+<p>So we then do that action, multiplying our previous result (6) by 1.</p>
+
+<p>At this point, the size of our problem is such that our task no longer needs to be performed - we’ve run out of numbers to be multiplied.</p>
+
+<p>Our recursive action can now be completed, with the work of each task being combined to give us the overall result of our work - the total of 6.</p>
+
+<p>Let’s build this out in code.</p>
+
+<p>A recursive function will look like this, in pseudocode:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">recursiveFunction</span><span class="p">(</span><span class="nx">parameter</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">parameter</span> <span class="nx">equals</span> <span class="nx">exitCondition</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">parameter</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="p">{</span>
+		<span class="c1">// modify parameter in some way</span>
+		<span class="k">return</span> <span class="nx">recursiveFunction</span><span class="p">(</span><span class="nx">modifiedParameter</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>In general, a recursive function has two parts:</p>
+<ul>
+  <li>a <em>base case</em> (the situation in which our work is done, as the overall problem has been fully reduced); and</li>
+  <li>a recursive step (our “core data processing task”)</li>
+</ul>
+
+<p>In a recursive function, we always check the base case first - we need to see whether or not we even need to perform the recursive step. In the pseudocode above, this is the lines</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">parameter</span> <span class="nx">equals</span> <span class="nx">exitCondition</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">parameter</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>The “core data processing task” is the lines</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// modify parameter in some way</span>
+<span class="k">return</span> <span class="nx">recursiveFunction</span><span class="p">(</span><span class="nx">modifiedParameter</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Here is a recursive function to calculate factorials:</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="nx">n</span><span class="p">){</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">){</span>
+		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<span class="c1">// output: 6</span>
+</code></pre>
+</div>
+
+<p>Here, the base case is arrived at when the whole number we are addressing is &lt;= 1. This means the problem has been reduced such that no further processing is needed. When we arrive at this point, we can stop executing code in the current function call by returning that lowest possible whole number to the function call immediately prior.</p>
+
+<p>The code for our base case is:</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">){</span>
+	<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Let’s examine the “core data processing task” - the recursive function call itself:</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Here, we are trying to do math. Specifically, we want to multiply the value of <code class="highlighter-rouge">n</code> <em>as it exists in the current function</em> by <em>the value we will get if we call the recursive function while passing in the whole number that is one less than the current value of <code class="highlighter-rouge">n</code></em>.</p>
+
+<p>This code is best understood by going through it step by step.</p>
+
+<h3 id="step-by-step-walkthrough">Step-by-step walkthrough</h3>
+<p>The first actual function call we make is to the built-in JavaScript function <code class="highlighter-rouge">console.log()</code>.</p>
+
+<p>That function can’t complete until the function call inside its parentheses is complete - so the function call gets added to our stack.</p>
+
+<p>Our stack now has one call on it:</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>Look at the first call to <code class="highlighter-rouge">getFactorialRecursively()</code>. Let’s say we are passing in the whole number 3, just as in the above code.</p>
+
+<p>We call that function.</p>
+
+<p>The function call gets added to the stack.</p>
+
+<p>Our stack now has two calls on it:</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>We enter the function call <code class="highlighter-rouge">getFactorialRecursively(3)</code>.</p>
+
+<p>We check the base case. As 3 is greater than 1, we continue into the <code class="highlighter-rouge">else</code> block.</p>
+
+<p>In that block, we want to multiply 3 by whatever we will get as a return when we call <code class="highlighter-rouge">getFactorialRecursively()</code> again.</p>
+
+<p>This time, though we are going to call <code class="highlighter-rouge">getFactorialRecursively()</code> with the value 2 passed in as a parameter - since 3 minus 1 is 2.</p>
+
+<p>THIS NEXT PART IS VERY IMPORTANT!</p>
+
+<p>Right now, we have two function calls on the stack - the call to <code class="highlighter-rouge">console.log()</code>, and the call to <code class="highlighter-rouge">getFactorialRecursively(3)</code>. NEITHER FUNCTION CALL HAS COMPLETED EXECUTION, so they stay on the stack.</p>
+
+<p>The <code class="highlighter-rouge">getFactorialRecursively(3)</code> call can’t complete, as it is waiting for a value to come back from the next call to <code class="highlighter-rouge">getFactorialRecursively()</code> - the one we are about to make.</p>
+
+<p>And the <code class="highlighter-rouge">console.log()</code> call can’t complete, as it has not gotten a value returned to it by the first <code class="highlighter-rouge">getFactorialRecursively()</code> call.</p>
+
+<p>So, we make that function call to <code class="highlighter-rouge">getFactorialRecursively()</code>, passing in the value 2.</p>
+
+<p>That function call gets added to the stack, above the most recent function call.</p>
+
+<p>Our stack now has three calls on it:</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>Now we’re inside this new function call.</p>
+
+<p>We check the base case. Nope, 2 is greater than 1 - so we continue into the else block.</p>
+
+<p>We again want to do math. Specifically, we want to multiply 2 by whatever we will get as a return when we call <code class="highlighter-rouge">getFactorialRecursively()</code> again.</p>
+
+<p>Okay, we are about to make yet another call to <code class="highlighter-rouge">getFactorialRecursively()</code>.</p>
+
+<p>We do so, passing in the value 1 as a parameter (becaue 2-1=1).</p>
+
+<p>Remember, this call <em>also</em> gets added to the stack. We now have <em>four</em> calls on the stack:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>None of these function calls is complete.</p>
+
+<p>So, let’s see what happens when we run through the code in this latest call to <code class="highlighter-rouge">getFactorialRecursively()</code>:</p>
+
+<p>We check the base case. NOW we meet the base case - the number passed in as a parameter was 1.</p>
+
+<p>We have now reduced the initial problem to its smallest size - there are no more numbers to process, as factorials only work with positive whole numbers.</p>
+
+<p>Per the logic in our base case code block, we return the value 1 to the previous function - and we REMOVE THE CURRENT FUNCTION CALL FROM THE STACK, as it is done executing.</p>
+
+<p>Our stack now has only three calls on it:</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>Context for the computer is now returned to the previous function call, the one now at the top of the stack.</p>
+
+<p>As the function we were just in returned a value, 1, we can complete our math operation.</p>
+
+<p>Remember that in this function call, the value of <code class="highlighter-rouge">n</code> is 2 - so our math results in a value of 2 (2x1=2).</p>
+
+<p>We return that value to the previous function call, and we REMOVE THE CURRENT FUNCTION CALL FROM THE STACK.</p>
+
+<p>Our stack now has only two calls on it:</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getFactorialRecursively</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>Context for the computer is now returned to the previous function call, the one now at the top of the stack.</p>
+
+<p>As the function we were just in returned a value, 2, we can complete our math operation.</p>
+
+<p>Remember that in this function call, the value of <code class="highlighter-rouge">n</code> is 3 - so our math results in a value of 6 (3x2=6).</p>
+
+<p>We return that value to the previous function call, and we REMOVE THE CURRENT FUNCTION CALL FROM THE STACK.</p>
+
+<p>Our stack now has only one call on it:</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>Since the previous function returned a value, 6, we can complete the <code class="highlighter-rouge">console.log()</code> call. We do so, resulting in a console output of the number 6.</p>
+
+<p>We then remove that call from our stack - and our stack is empty.</p>
+
+<p>Our main program is now able to continue with any further instructions in the main execution path.</p>
+
+<p>There you have it - recursion in action.</p>
+
+<h3 id="when-should-i-use-recursion">When should I use recursion?</h3>
+<p>Recursion is made for solving problems that can be broken down into smaller, repetitive problems. It is especially good for working on things that have many possible branches and are too complex for an iterative approach.</p>
+
+<p>A typical use case for recursion might be searching through a file system. Folders and files are not held to a strict structure, and folders can contain nothing, only files or folders, or both files and folders. Designing an interative function to search such a structure would be very hard, and the code would be hard to follow.</p>
+
+<p>Instead, you could design a recursive function that would keep drilling down into a path of folders and files until there wasn’t anything left unexamined, and then go back up the structure to find another path it hadn’t searched. The function would search that path in turn, in a similar manner. Once all paths had been searched (the base case), the function would be complete.</p>
+
+<p>Here is an example of such a function, designed for execution on a server using Node.js. It makes use of a Node library called “fs”, which provides built-in functions for working with file systems. It also makes use of a Node library called “path”, which makes it easier to work with exact paths to folders and files.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">getAllFiles</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dirPath</span><span class="p">,</span> <span class="nx">arrayOfFiles</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">files</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readdirSync</span><span class="p">(</span><span class="nx">dirPath</span><span class="p">)</span>
+
+  <span class="nx">arrayOfFiles</span> <span class="o">=</span> <span class="nx">arrayOfFiles</span> <span class="o">||</span> <span class="p">[]</span>
+
+  <span class="nx">files</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">statSync</span><span class="p">(</span><span class="nx">dirPath</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="nx">file</span><span class="p">).</span><span class="nx">isDirectory</span><span class="p">())</span> <span class="p">{</span>
+      <span class="nx">arrayOfFiles</span> <span class="o">=</span> <span class="nx">getAllFiles</span><span class="p">(</span><span class="nx">dirPath</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">arrayOfFiles</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">arrayOfFiles</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="nx">dirPath</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">,</span> <span class="nx">file</span><span class="p">))</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+
+  <span class="k">return</span> <span class="nx">arrayOfFiles</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Other common situation where recursion is helpful is in processing other tree data structures like the file system above, or in processing graph data structures (such as a model of social media connections).</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope this helped remove any mystery or confusion from recursion. Let me know your thoughts.</p>
+
+  </div>
+  <div class="mt4 mb4"><div class="clearfix mxn1">
+  <div class="md-col md-col-6 px1">
+    
+      <a href="/blog/jekyll/update/2022/03/06/five-live-free-code-school-faq.html">
+        <div class="h6 caps gray">Previous</div>
+        <h4 class="mt0">Five Live free code school - FAQ</h4>
+      </a>
+    
+  </div>
+  <div class="md-col md-col-6 px1 right-align">
+    
+  </div>
+</div></div>
+  <div class="mt4"><div class="circle-line-image center mt1">
+    <a href="http://localhost:4000">
+      <img data-src="/assets/img/profile-photos/ErikHeadshot.jpg" alt="Erik Gross" class="lazyload border bg-white border-light-gray circle square-100">
+
+    </a>
+  </div>
+  <div class="clearfix">
+    <div class="sm-col sm-col-7">
+      <a href="http://localhost:4000 "><h3>Erik Gross</h3></a>
+      <p class="h5">
+        If you enjoyed this post, you may also like this book I co-authored:
+        <em><a href="http://mybook.to/youarenotstupid" target="_blank">You Are Not Stupid: Computers and Technology Simplified</a></em>
+      </p>
+    </div>
+    <div class="sm-col-right">
+      <h3>Share this post</h3>
+      
+
+
+
+
+<a href="https://twitter.com/share?url=http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html&amp;text=How%20Does%20Recursion%20Work%20Anyway?" target="_blank" class="fa fa-fw fa-lg fa-twitter-square gray"></a>
+<a href="https://www.linkedin.com/shareArticle?url=http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html&amp;title=How%20Does%20Recursion%20Work%20Anyway?" target="_blank" class="fa fa-fw fa-lg fa-linkedin-square gray"></a>
+<a href="https://www.facebook.com/sharer.php?u=http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html" target="_blank" class="fa fa-fw fa-lg fa-facebook-square gray"></a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html" target="_blank" class="fa fa-fw fa-lg fa-google-plus-square gray"></a>
+<a href="http://reddit.com/submit?url=http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html&amp;title=How%20Does%20Recursion%20Work%20Anyway?" target="_blank" class="fa fa-fw fa-lg fa-reddit-square gray"></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://localhost:4000/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway.html&amp;t=How%20Does%20Recursion%20Work%20Anyway?" target="_blank" class="fa fa-fw fa-lg fa-hacker-news gray"></a>
+    </div>
+  </div></div>
+</article>
+  </main>
+  
+    <section class="bg-splash-gray px3 py3 border-top border-light-gray">
+    <div class="container block p3">
+      <a name="comments"></a>
+      <h4>Comments</h4>
+      <div id="disqus_thread"></div>
+    </div>
+  </section>
+  
+  
+  <footer class="sticky-footer border-top border-light-gray gray h6">
+    <div class="sm-col px2">
+      &copy; 2022 Erik Gross.    
+    </div>
+    <div class="sm-col-right px2">
+      
+        
+        <a href="https://twitter.com/erikdavidgross" target="_blank" class="gray hint--top" data-hint="Twitter">
+          <i class="fa fa-fw fa-lg fa-twitter-square"></i>
+        </a>
+      
+        
+        <a href="https://www.linkedin.com/in/erikgrosstechacademy" target="_blank" class="gray hint--top" data-hint="LinkedIn">
+          <i class="fa fa-fw fa-lg fa-linkedin-square"></i>
+        </a>
+      
+        
+        <a href="https://www.facebook.com/erik.gross.902" target="_blank" class="gray hint--top" data-hint="Facebook">
+          <i class="fa fa-fw fa-lg fa-facebook-square"></i>
+        </a>
+      
+        
+        <a href="https://github.com/kiresorg/" target="_blank" class="gray hint--top" data-hint="GitHub">
+          <i class="fa fa-fw fa-lg fa-github-square"></i>
+        </a>
+      
+        
+        <a href="mailto:erikdavidtech@gmail.com" target="_blank" class="gray hint--top" data-hint="Email">
+          <i class="fa fa-fw fa-lg fa-envelope-square"></i>
+        </a>
+      
+    </div>
+  </footer>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'erikdavidtech-com';
+    var disqus_identifier = '/blog/jekyll/update/2022/04/04/how-does-recursion-work-anyway';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      
+
+      
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3107613-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
