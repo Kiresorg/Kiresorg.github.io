@@ -29,22 +29,17 @@ If for some reason one of the five students has to drop out, we will invite anot
 You can apply to be on the waiting list [here](https://forms.gle/gRVZqbuwtYd9A66YA).
 
 ## Where can I watch the classes?
-All classes are broadcast live on the internet, on several platforms:
-- [Twitch](https://www.twitch.tv/erik_gross) - the primary broadcast channel
-- [YouTube](https://www.youtube.com/channel/UCyJ8Tpn57JR_O2xm28xkvEA)
-- [Twitter](https://twitter.com/ErikDavidGross)
-- [Facebook](https://www.facebook.com/fivelivecodeschool)
-- [LinkedIn](https://www.linkedin.com/in/erikgrosstechacademy/)
+All classes are broadcast live on the internet, on my [Twitch channel](https://www.twitch.tv/erik_gross)
 
 ## When are the live classes held?
 While the schedule may change, for now the live classes are held twice a week:
-- Saturdays from 7-9:30 p.m. Pacific 
-- Mondays from 8-10:30 Pacific
+- Sundays from 8-9:30 p.m. Pacific 
+- Mondays from 8-9:30 Pacific
 
 For current schedule info, see the [Twitch](https://www.twitch.tv/erik_gross) channel.
 
 ## What if I can't watch the classes when they are broadcast?
-Recordings of all classes are available permanently on my [YouTube](https://www.youtube.com/channel/UCyJ8Tpn57JR_O2xm28xkvEA) channel, so they can be reviewed at your own pace.
+Recordings of all classes are uploaded to my [YouTube](https://www.youtube.com/channel/UCyJ8Tpn57JR_O2xm28xkvEA) channel 24 hours after the live stream. They will be on the YouTube channel permanently, so you can review them at your own pace.
 
 ## How do I get access to the homework?
 All homework assigments and class materials are available on a publicly-accessible folder:
