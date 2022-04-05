@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "How Does Recursion Work Anyway?"
+title:  "What Should I Know About... Recursion?"
 date:   2022-04-04 00:17:11 -0700
 categories: jekyll update
 ---
 
-# What is Recursion and How Does it Work?
+# What Should I Know About... Recursion?
 
 Okay, so I’m going to try to explain recursion in a simple way. 
 
