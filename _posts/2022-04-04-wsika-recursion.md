@@ -167,7 +167,7 @@ Remember that we are going to apply the "core data processing task" to reduce th
 
 The first time we apply this task, we multiply 3 times 2.
 
-The size of our problem has now been reduced - all that is left is to take the result of our first task and multiple it by 1.
+The size of our problem has now been reduced - all that is left is to take the result of our first task and multiply it by 1.
 
 So we then do that action, multiplying our previous result (6) by 1.
 
