@@ -99,11 +99,9 @@ Finally, some of the content in the guide is of my own creation. As I develop mo
 ## How can I get started?
 The guide is currently in a beta release - I want feedback from a small group of users as I complete version 1.0. 
 
-Beta users will 
-
 Sign up [here](https://bit.ly/36sDBYx).
 
 ## How much does it cost?
-The guide is free for life for the beta users. As we approach the launch of version 1.0 of the guide, I'll establish a price. It will be low, and it will give you lifetime access to the guide as it evolves.
+The guide is free for the beta users. As we approach the launch of version 1.0 of the guide, I'll establish a price. It will be low, and it will give you lifetime access to the guide as it evolves.
 
-I hope you enjoy it, and that you acheive your goals. You deserve to have a rewarding career in technology, and it would make me very happy if I could help you have that.
+I hope you enjoy it, and that you achieve your goals. You deserve to have a rewarding career in technology, and it would make me very happy if I could help you have that.
