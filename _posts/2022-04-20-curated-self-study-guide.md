@@ -31,7 +31,7 @@ There are three generally accepted routes to become a software developer:
 - Relatively inexpensive: While tuition can vary widely, the average boot camp cost in the U.S. is around $13,500 as of 2022
 
 **Cons**
-- Little time for Computer Science: the rapid pace and short length of boot camp training mean that many program don't dedicate much time to exploring the fundamental principles of Computer Science, meaning you won't be prepared to tackle some complex development tasks involving optimization and designing for scale
+- Little time for Computer Science: The rapid pace and short length of boot camp training mean that many program don't dedicate much time to exploring the fundamental principles of Computer Science, meaning you won't be prepared to tackle some complex development tasks involving optimization and designing for scale
 - Less respect: Boot camps are a new route into the industry, and they faced strong opposition when they began in 2012/2013. As the boot camp industry matured, respect for this route increased, due to improved outcomes and the rise of independent results organizations such as the CIIR (Council on Integrity in Results Reporting) - but some industry professionals still view these programs with suspicion
 - Difficult to integrate into life: Many boot camps are designed to deliver training full-time, so it can be difficult to maintain your studies if you are also keeping up your job and other responsibilities
 
