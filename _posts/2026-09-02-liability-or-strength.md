@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Liability or Strength: A Way of Thinking about Software Architecture"
-date:   2026-09-02 09:00:00 -0700
+date:   2026-09-02 09:00:00 -0500
 categories: jekyll update
 ---
 

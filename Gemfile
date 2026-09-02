@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 gem 'jekyll', '3.5.2'
-gem 'wdm'
+gem 'wdm', platforms: [:mingw, :mswin]
+# ffi 1.17+ requires Ruby 3.0; system Ruby on macOS is 2.6
+gem 'ffi', '~> 1.15.5'
 gem 'tzinfo'
 gem 'tzinfo-data'
 group :jekyll_plugins do
