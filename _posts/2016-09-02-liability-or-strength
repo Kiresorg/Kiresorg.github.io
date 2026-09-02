@@ -1,0 +1,218 @@
+---
+layout: post
+title:  "Liability or Strength: A Way of Thinking about Software Architecture"
+date:   2026-09-02 09:00:00 -0700
+categories: jekyll update
+---
+
+# Liability or Strength: A Way of Thinking about Software Architecture
+
+***"The first principle is that you must not fool yourself - and you are the easiest person to fool."*** - Richard Feynman
+
+I learned early in my career that not everyone thinks in the same way, and that we use different ways of thinking for different kinds of work.
+
+As software engineers and architects, we develop our own distinct way of thinking as we design, build, maintain and refactor complex systems.
+
+Along the way, we learn a great number of things.
+
+Some of the things we know are facts about the world, and some of them are decisions somebody made a long time ago - and almost nobody has been handed a way to tell those two things apart.
+
+I don't think we're careless about this.
+
+What I think is that we get handed a few hundred rules over the course of a career and almost never get handed a way to test which of them are actually holding weight, so we end up carrying all of them with the same care and defending all of them with the same confidence.
+
+The way you think can be your greatest strength as a knowledge worker, and simultaneously your greatest liability. I believe it is worth examining how you think, and working tirelessly to improve that faculty. This work starts with looking at how you accumulate your own facts and opinions over time.
+
+## Everything arrives in the same box
+
+Think about how technical knowledge actually reaches you.
+
+A proof about what is possible in a distributed system arrives labeled as "a principle."
+
+A style preference that somebody settled on in 1997, in a language most of us no longer use, arrives labeled as "a best practice."
+
+A pattern that worked beautifully at a company whose problems looked nothing like yours arrives labeled as "the industry standard."
+
+All spoken in the same tone of voice, asserted with the same confidence, and delivered in the same box.
+
+And so we defend them all with the same energy.
+
+I have sat in a room and watched a team argue about choosing an Object/Relational Mapper with more heat than that same team spent, an hour later, on a data consistency decision that could not be undone once it shipped - and if done poorly, could affect the business negatively for many years. Nobody in that room was stupid; several of them were better engineers than I am - and one of them was me, arguing hard about the O/RM :)
+
+We just had no vocabulary for saying out loud that one of those two things was a preference and the other one was a wall.
+
+Now, you may be thinking: of course I know the difference. Fair enough.
+
+So try this right now, before you keep reading. Pick the last architectural rule you enforced on somebody else's design (and if you've been doing this a while, you enforce more of these in a week than you probably realize), then ask yourself whether you can say what would actually happen if they ignored it.
+
+Not "it would be worse" or "I prefer this other approach." What specifically breaks, and why does it have to break?
+
+If you can answer that question, your rule is doing real work and you should keep enforcing it.
+
+If you can't, you were passing along a rumor in a confident voice. And yes, I've done this myself - and only realized later the nature of my mistake.
+
+## The problem has a name
+
+I call it an **arbitrary**: a decision or conclusion made without inspection of the area in which the decision is being made.
+
+Not random, and not stupid. An arbitrary can be carefully argued, widely agreed upon, and completely reasonable-sounding, and still be an arbitrary - because nobody has inspected the situation it is being applied to right now.
+
+What actually happens is less malicious or poorly-thought out than you'd expect.
+
+Somebody looks hard at their own situation and reaches a good conclusion. It is the right call, for that system, at that time.
+
+Then the conclusion travels, and the inspection doesn't travel with it.
+
+Somebody applies it to a different system, at a different time, under different constraints than the first person was working with - without ever looking at the new situation the way that first person looked at theirs. That's the moment an arbitrary is created: not when the decision was first made, but when it gets made again without a fresh look.
+
+And a few years after that it's written into a style guide, and a new engineer who asks why is simply told, "this is how we do it here."
+
+That's where dogma comes from. Not from bad ideas, but from good ideas that stopped being inspected.
+
+## The three kinds of things in your toolkit - and how to know the difference
+
+I believe you should sort your knowledge by consequence rather than by category - so don't start by asking what kind of thing an idea is.
+
+*Ask what happens when you go against it.*
+
+There are three possibilities.
+
+**A law: you can't. The attempt is itself the failure.**
+
+A law holds whether or not you know about it, which means it was operating inside your system this morning and it did not consult your design document first. You didn't choose it, you can't vote on it, and no budget or headcount moves it.
+
+Every law has an inescapable physical truth and mechanism you can trace, so you can always explain why it has to be so:
+
+- A single CPU core does one thing at a time, because it has exactly one point of execution.
+
+- Two computers can never both become certain over a channel that drops messages, because whoever sends the last message has no way of knowing it arrived.
+
+- Wait times increase toward infinity as a resource approaches full utilization, because work arrives at moments that don't line up with when you can serve it, and the mismatch has nowhere to go but the queue.
+
+- No one can safely change what they can't hold in one mental model, because judging a change means holding the interacting parts at once, and every person's capacity for that is finite.
+
+Notice where those four came from: the machine itself, the distance between machines, the mathematics of flow, and the limits of the people involved.
+
+That's not trivia. The source of the limit tells you your options. You can sometimes buy your way past the machine with better hardware. Distance you can only shorten, or stop crossing. The mathematics no hardware can change at all, so you change what arrives, change the nature of the computing work, or accept the queue. And the human limit barely moves for tooling changes, which is why you decompose.
+
+Laws are the load-bearing walls of your building. Know them, and anchor your systems to them.
+
+**A tendency: you can go against it - but it will cost you.**
+
+A tendency is something the world keeps doing, in enough different situations and enough different decades that betting on it is reasonable:
+
+- Organizations produce systems shaped like their own communication paths.
+
+- Complex systems that work well turn out, when you look closely, to have grown from simple systems that worked well.
+
+- Given enough users, every observable behavior of a system ends up being depended on by somebody, whether or not you ever documented it.
+
+These are not soft and they are not weak; what they're missing is a universal proof, and the consequence of that missing proof is that you can defy a tendency at a price.
+
+So the discipline here is naming the price in advance, rather than discovering it in the retrospective five months later when somebody asks how we ended up in this mess.
+
+Tendencies are the well-established patterns you use to build around the load-bearing walls. You can change the pattern, but you'd better know what it's going to cost you.
+
+**A lens: you can push back, for free. Go pick a better one.**
+
+A lens is a way of seeing that you chose because it turned out to be useful, which means its authority is personal - it came from you and not from the world.
+
+Here's the test, and it takes about five seconds: could a good engineer hold a different view of this, look at the same system, and still not be wrong?
+
+Then what you have is a lens.
+
+Here's one of mine. For years I taught new developers that there are five essential elements in any program:
+
+- An entrance point
+- Variables
+- Control and branching constructs
+- Sub-programs
+- An exit point
+
+Then I learned it breaks down further than that. A program actually needs only three elements:
+
+- Sequence
+- Selection
+- Iteration
+
+I kept teaching the five.
+
+Not out of stubbornness, but because five was better for what I was actually doing, which was helping people who had never written a line of code make sense of a subject that can seem intimidating and confusing at first. Being technically right is different from being effective.
+
+The three-element version is a Computer Science fundamental. The five-element version is the one that helped people break into tech.
+
+That is not a demotion, by the way. A well-chosen lens is the most productive thing you own, because it's a point of view that helps you resolve complexity - and I'd give up a great many facts before I gave up a good way of looking.
+
+But every lens has edges - limits to its utility - and the edges are part of the tool rather than a defect in it. My own "5 Elements" lens is very useful if I'm teaching new coders - but would be inadequate in a CS class.
+
+***A lens with its boundary marked is worth more than the same lens without one, and it beats having no lens at all.***
+
+Lenses are the wallpaper. Choose them deliberately, enjoy them, and never mistake them for the building pattern or the load-bearing walls.
+
+## Twelve things I believe about architectural thinking
+
+1. There is no substitute for your own direct observation. Having a firm opinion about a thing you have never looked at is foolish and dangerous.
+
+2. Every idea you hold is one of three things: a fact that cannot be otherwise, a pattern that tends to be true most of the time, or a viewpoint you chose because it helped you in your work.
+
+3. A law is not negotiable. A tendency is a bet with good odds. A lens is a choice you must be willing to set down.
+
+4. Confusing a lens for a law is how good ideas calcify into dogma.
+
+5. An arbitrary is a real idea that nobody inspected. A slogan is an idea with nothing to inspect. They feel identical when you're holding them, and only one of them can be rescued by looking.
+
+6. A conclusion that was right when somebody reached it becomes an arbitrary the moment it's applied again without a fresh look.
+
+7. Ask of any principle: what would have to be true for this to fail? If nothing could, it constrains nothing. A wall holds weight because it resists, and an idea holds weight the same way.
+
+8. Laws come from somewhere. Know where: the machine itself, the distance between machines, the mathematics of flow, or the limits of the people who build and run the thing.
+
+9. You can defy a tendency. Name the price before you pay it.
+
+10. Every lens has an edge. Finding it is not an attack on the lens. It's how you learn to use it.
+
+11. Seniority is not more tools. It's knowing what each one can hold.
+
+12. When a decision is hard to reverse, the difference between a choice you can defend and one you're just hoping about is knowing which of your reasons were inescapable laws.
+
+## How to grade an architectural principle or practice
+
+This approach has four steps, and I've written about them at length elsewhere - so here they are, compressed:
+
+**Find the first principle.** What is the most basic underlying truth that the subject sits on?
+
+**Test what kind of truth it is.** Is it a physical law you can't escape, a tendency the world keeps repeating, or a frame you picked up because it helped? Go at it from every direction that seems to contradict it, and watch whether it holds. And when it holds, name which of the four it came from - machine, distance, flow, or people - because that is what tells you whether you have any room at all.
+
+**Move upward.** If it's true, what does it force to be true next?
+
+**Find where it breaks.** When does the idea stop being useful? Every idea has edges, and the edges will teach you as much as the center did.
+
+That second step is the one nobody teaches, and it's the whole of what I'm arguing for here.
+
+## What I'm asking you to do
+
+Before your next decision that you can't take back, write down the reasons behind that decision. Then grade each one.
+
+The ones that are laws, build on.
+
+The ones that are tendencies, keep, and write down beside them what it would cost you to be the exception.
+
+The ones that are lenses, keep those too, and write down where they stop working.
+
+In my experience, no meaningful improvement comes without hard work. What I've just laid out is the work here. Not collecting more tools, but knowing what your tools are - which is the only way to know what they can carry.
+
+## One more thing
+
+I'm aware of what I've just done here.
+
+I handed you a framework and told you in the same breath that frameworks should be inspected before you trust them, which would be a fairly slick trick to pull if I didn't turn it around on my own ideas.
+
+So: this entire thing is a lens.
+
+I chose it, I find it useful, and I think you will too. It is not a law of engineering.
+
+Nobody proved it; I'd be surprised if it survives contact with your work entirely unchanged; and if you find the edge of it I would genuinely like to hear about it.
+
+Set it down when it stops helping you. Knowing which kind of principle or idea you're holding is exactly what lets you do that without losing anything.
+
+p.s. If you want to test all of this on something real, pick one rule your team follows and go find out where it came from. Not what it says - where it came from, and who decided, and what they were worried about at the time. Each time I've done that I've found it helpful.
